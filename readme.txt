@@ -32,6 +32,12 @@ Bug reports, feedback and feature requests is thankfully received!
 1. Upload the `event-post-type` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
+== Frequently Asked Questions ==
+
+= What is Event Post Type? =
+
+A plugin for sending newsletters to registered users on your blog.
+
 == Screenshots ==
 
 No screenshots yet.
@@ -42,3 +48,6 @@ No screenshots yet.
 * Initial release with basic functionality
 
 == Upgrade Notice ==
+
+= 1.0 =
+Initial release
