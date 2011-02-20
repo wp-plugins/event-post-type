@@ -1,7 +1,7 @@
 === Event Post Type ===
 Contributors: edvind
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EXQYJ7PM2R9RU
-Tags: events, event, manager, post, type
+Tags: events, event, manager, custom, post, type
 Requires at least: 3.0
 Tested up to: 3.1
 Stable tag: 1.0
