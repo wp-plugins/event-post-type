@@ -34,9 +34,9 @@ Bug reports, feedback and feature requests is thankfully received!
 
 == Frequently Asked Questions ==
 
-= What is Event Post Type? =
+= How do i implement the places and dates to my theme? =
 
-A plugin for sending newsletters to registered users on your blog.
+Use the custom post data: _date_start, _time_start, _date_end, _time_end. The places is stored in a database table that can be accessed through _event_location_id.
 
 == Screenshots ==
 
