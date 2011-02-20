@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: events, event, manager, custom, post, type
 Requires at least: 3.0
 Tested up to: 3.1
-Stable tag: 1.0
+Stable tag: 1.0.1
 
 Event Post Type brings events to WordPress in an simple intuitive style.
 
@@ -43,6 +43,10 @@ A plugin for sending newsletters to registered users on your blog.
 No screenshots yet.
 
 == Changelog ==
+
+= 1.0.1 =
+* Added: Start date visible when managing events
+* Fixed: Some minor formatting
 
 = 1.0 =
 * Initial release with basic functionality

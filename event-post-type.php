@@ -4,7 +4,7 @@ Plugin Name: Event Post Type
 Plugin URI: 
 Description: Event Post Type brings events to WordPress in a simple intuitive style.
 Author: Joel Bergroth
-Version: 1.0
+Version: 1.0.1
 Author URI: http://edvindev.wordpress.com
 */
 
@@ -38,9 +38,11 @@ define('EVENT_LOCATION_TABLE','event_locations');
 add_action('contextual_help', 'add_help_text', 10, 3);
 add_action('init', 'event_post_type');
 add_action('save_post', 'event_save_postdata', 10, 2);
+add_action("manage_posts_custom_column", "events_columns_content");
 
 //Filters
 add_filter('post_updated_messages', 'event_updated_messages');
+add_filter("manage_edit-event_columns", "events_columns_title");
 
 //Stylesheets and Scripts
 add_action('admin_print_styles', 'event_css');
@@ -249,7 +251,7 @@ jQuery(document).ready(function($) {
 <table class="form-table">
 
 	<tr valign="top">
-		<th scope="row"><label for="date_start"><?php _e('From:'); ?></label></th>
+		<th scope="row"><label for="date_start"><?php _e('Start:'); ?></label></th>
 		<td>
 			<span class="description"><?php _e('Date:'); ?></span><input name="date_start" type="text" id="date_start" value="<?php echo $date_start; ?>" class="regular-date datepicker" />
 		</td>
@@ -259,7 +261,7 @@ jQuery(document).ready(function($) {
 	</tr>
 	
 	<tr valign="top">
-		<th scope="row"><label for="date_end"><?php _e('To:'); ?></label></th>
+		<th scope="row"><label for="date_end"><?php _e('End:'); ?></label></th>
 		<td>
 			<span class="description"><?php _e('Date:'); ?></span><input name="date_end" type="text" id="date_end"  value="<?php echo $date_end; ?>" class="regular-date datepicker" />
 		</td>
@@ -513,11 +515,50 @@ function event_save_postdata( $post_id ) {
 	//if(!$location_address == '') update_post_meta($post_id, '_location_address', $location_address);
 	//if(!$location_town == '') update_post_meta($post_id, '_location_town', $location_town);
 	
-	
-	
-	
-	
+
   
+}
+
+
+
+function events_columns_title($columns) {
+	$columns = array(
+		"cb" => "<input type=\"checkbox\" />",
+		"title" => __('Title'),
+		"datetime_start" => "Start",
+		//"event_category" => __('Kategori'),
+		"author" => __('Author'),
+		"date" => __('Published')
+	);
+	return $columns;
+}
+
+function events_columns_content($column) {
+	global $post;
+	$custom = get_post_custom();
+	if(isset($custom["_date_start"][0])) {
+		$date_start = $custom["_date_start"][0];
+	}
+	else { $date_start = ''; }
+	if(isset($custom["_time_start"][0])) {
+		$time_start = $custom["_time_start"][0];
+	}
+	else { $time_start = ''; }
+	
+	
+	if ("datetime_start" == $column) echo $date_start.' '.$time_start;
+	/*elseif ("event_category" == $column) {
+		$event_categories = get_the_terms(0, "event_category");
+		$event_category_html = array();
+		
+		if(!$event_categories == '') {
+			foreach ($event_categories as $events_category)
+				array_push($event_category_html, '<a href="' . get_term_link($events_category->slug, "event_category") . '">' . $events_category->name . '</a>');
+		echo implode($event_category_html, ", ");
+		}
+		else { echo "<i>Ingen kategori</i>"; }
+	}*/
+	elseif ("author" == $column) echo $post->author;
 }
 
 ?>
