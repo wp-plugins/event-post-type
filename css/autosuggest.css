@@ -1,0 +1,160 @@
+/* 
+================================================
+autosuggest, inquisitor style
+================================================
+*/
+
+body
+{
+	position: relative;
+}
+
+
+div.autosuggest
+{
+	position: absolute;
+	background-position: top;
+	background-repeat: no-repeat;
+	padding: 10px 0 0 0;
+}
+
+div.autosuggest div.as_header,
+div.autosuggest div.as_footer
+{
+	position: relative;
+	height: 6px;
+	padding: 0 6px;
+	background-image: url(img/ul_corner_tr.gif);
+	background-position: top right;
+	background-repeat: no-repeat;
+	overflow: hidden;
+
+}
+div.autosuggest div.as_footer
+{
+	background-image: url(img/ul_corner_br.gif);
+}
+
+div.autosuggest div.as_header div.as_corner,
+div.autosuggest div.as_footer div.as_corner
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 6px;
+	width: 6px;
+	background-image: url(img/ul_corner_tl.gif);
+	background-position: top left;
+	background-repeat: no-repeat;
+
+}
+div.autosuggest div.as_footer div.as_corner
+{
+	background-image: url(img/ul_corner_bl.gif);
+}
+div.autosuggest div.as_header div.as_bar,
+div.autosuggest div.as_footer div.as_bar
+{
+	height: 6px;
+	overflow: hidden;
+	background-color: white;
+}
+
+div.autosuggest div.as_header div.as_bar {
+	border-top: 1px solid #aaa;
+}
+
+div.autosuggest div.as_footer div.as_bar {
+	background: url(img/ul_border_b.gif) repeat-x;
+	
+}
+
+div.autosuggest ul
+{
+	list-style: none;
+	margin: 0 0 -4px 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: white;
+		
+	border-left: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+	
+}
+
+div.autosuggest ul li
+{
+	color: #7c7c7c;
+	padding: 0;
+	margin: 0 4px 4px;
+	text-align: left;
+}
+
+div.autosuggest ul li a
+{
+	color: #7c7c7c;
+	display: block;
+	text-decoration: none;
+	background-color: transparent;
+	position: relative;
+	padding: 0;
+	width: 100%;
+	border:1px solid #d3d3d3;
+	
+	background: url(img/hl_background.gif) repeat-x;
+	background-color: #e7e7e7;
+}
+div.autosuggest ul li a:hover
+{
+	border:1px solid #999999;
+	color: #434343;
+}
+
+div.autosuggest ul li a span
+{
+	display: block;
+	padding: 3px 6px;
+	font-weight: bold;
+}
+
+div.autosuggest ul li a span small
+{
+	font-weight: normal;
+	color: #7c7c7c;
+}
+div.autosuggest ul li a:hover span small
+{
+	color: #434343;
+}
+
+
+div.autosuggest ul li a .tl,
+div.autosuggest ul li a .tr
+{
+	background-image: transparent;
+	background-repeat: no-repeat;
+	width: 6px;
+	height: 6px;
+	position: absolute;
+	top: 0;
+	padding: 0;
+	margin: 0;
+}
+div.autosuggest ul li a .tr
+{
+	right: 0;
+}
+
+
+
+div.autosuggest ul li.as_warning
+{
+	font-weight: bold;
+	text-align: center;
+}
+
+div.autosuggest ul em
+{
+	font-style: normal;
+	color: #000;
+}
