@@ -3,8 +3,8 @@ Contributors: edvind
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EXQYJ7PM2R9RU
 Tags: events, event, manager, custom, post, type
 Requires at least: 3.0
-Tested up to: 3.1
-Stable tag: 1.0.1
+Tested up to: 3.2.1
+Stable tag: 1.0.2
 
 Event Post Type brings events to WordPress in an simple intuitive style.
 
@@ -18,12 +18,6 @@ Features:
 * Add events
 * Date & Time
 * Places
-
-
-Features to come:
-
-* Event widget
-
 
 Bug reports, feedback and feature requests is thankfully received!
 
@@ -43,6 +37,9 @@ Use the custom post data: _date_start, _time_start, _date_end, _time_end. The pl
 No screenshots yet.
 
 == Changelog ==
+
+= 1.0.2 =
+* Fixed: Small typo preventing post start time and end date to be saved
 
 = 1.0.1 =
 * Added: Start date visible when managing events

@@ -4,7 +4,7 @@ Plugin Name: Event Post Type
 Plugin URI: 
 Description: Event Post Type brings events to WordPress in a simple intuitive style.
 Author: Joel Bergroth
-Version: 1.0.1
+Version: 1.0.2
 Author URI: http://edvindev.wordpress.com
 */
 
@@ -452,11 +452,11 @@ function event_save_postdata( $post_id ) {
 		$date_start = $_POST['date_start'];
 		update_post_meta($post_id, '_date_start', $date_start);
 	}
-	if(isset($_POST['$time_start'])) {
+	if(isset($_POST['time_start'])) {
 		$time_start = $_POST['time_start'];
 		update_post_meta($post_id, '_time_start', $time_start);
 	}
-	if(isset($_POST['$date_end'])) {
+	if(isset($_POST['date_end'])) {
 		$date_end = $_POST['date_end'];
 		update_post_meta($post_id, '_date_end', $date_end);
 	}
